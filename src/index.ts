@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import yargs from "yargs";
 import { exec as execCb } from "child_process";
 import { join } from "path";
