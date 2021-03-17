@@ -39,7 +39,7 @@ if (!firstArg) {
         ? "forgojs/forgo-template-typescript#main"
         : "forgojs/forgo-template-javascript#main";
 
-    await exec(`npx degit ${gitUrl} ${projectName}`);
+    await exec(`npx --yes degit ${gitUrl} ${projectName}`);
 
     const packageJsonPath = join(projectPath, "package.json");
 
@@ -58,7 +58,7 @@ if (!firstArg) {
 
     console.log("Installing packages. This might take a couple of minutes.");
 
-    const npm = spawn("npm", ["i"]);
+    const npm = spawn(/^win/.test(process.platform) ? "npm.cmd" : "npm", ["i"]);
 
     npm.stdout.on("data", (data) => {
       console.log(data.toString());
