@@ -12,7 +12,13 @@ cd my-app
 npm start
 ```
 
-Create Forgo App doesn’t handle any backend services or data access; it just creates a frontend build pipeline, so you can use it with any backend you want. 
+Create Forgo App doesn’t handle any backend services or data access; it just creates a frontend build pipeline, so you can use it with any backend you want.
+
+To create a production build, use:
+
+```sh
+npm run build
+```
 
 ## TypeScript
 
@@ -23,4 +29,3 @@ npx create-forgo-app my-app --template typescript
 cd my-app
 npm start
 ```
-

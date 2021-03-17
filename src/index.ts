@@ -56,6 +56,8 @@ if (!firstArg) {
 
     let hasError = false;
 
+    console.log("Installing packages. This might take a couple of minutes.");
+
     const npm = spawn("npm", ["i"]);
 
     npm.stdout.on("data", (data) => {
@@ -68,7 +70,20 @@ if (!firstArg) {
     });
 
     npm.on("close", (code) => {
-      console.log(`Created ${projectName}.`);
+      console.log(`Success! Created ${projectName} at ${projectPath}.`);
+      console.log("Inside that directory, you can these commands:");
+      console.log();
+      console.log("   npm start");
+      console.log("     Starts the development server.");
+      console.log();
+      console.log("   npm run");
+      console.log("     Bundles the app into static files for production.");
+      console.log();
+      console.log("We suggest that you begin by typing:");
+      console.log(`   cd ${projectName}`);
+      console.log("   npm start");
+      console.log();
+      console.log("Happy hacking!");
     });
   }
 
