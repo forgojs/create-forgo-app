@@ -76,7 +76,7 @@ if (!firstArg) {
       console.log("   npm start");
       console.log("     Starts the development server.");
       console.log();
-      console.log("   npm run");
+      console.log("   npm run build");
       console.log("     Bundles the app into static files for production.");
       console.log();
       console.log("We suggest that you begin by typing:");
