@@ -33,11 +33,26 @@ if (!firstArg) {
 
   console.log(`Creating a new Forgo app in ${projectPath}.`);
 
+  const templates: { [key: string]: string } = {
+    typescript: "forgojs/forgo-template-typescript-esbuild-loader#main",
+    javascript: "forgojs/forgo-template-javascript-esbuild-loader#main",
+    "typescript-ts-loader": "forgojs/forgo-template-typescript#main",
+    "javascript-babel-loader": "forgojs/forgo-template-javascript#main",
+  };
+
   async function run() {
-    const gitUrl =
-      argv.template === "typescript"
-        ? "forgojs/forgo-template-typescript#main"
-        : "forgojs/forgo-template-javascript#main";
+    const templateName = argv.template || "javascript";
+    const gitUrl = templates[templateName];
+
+    if (!gitUrl) {
+      console.log(
+        `Template ${templateName} not found. Available templates are ${Object.keys(
+          templates
+        ).join(", ")}.`
+      );
+      console.log("Type 'npx create-forgo-app' --help for help.");
+      process.exit(1);
+    }
 
     await exec(`npx --yes degit ${gitUrl} ${projectName}`);
 
