@@ -34,10 +34,10 @@ if (!firstArg) {
   console.log(`Creating a new Forgo app in ${projectPath}.`);
 
   const templates: { [key: string]: string } = {
-    typescript: "forgojs/forgo-template-typescript-esbuild-loader#main",
-    javascript: "forgojs/forgo-template-javascript-esbuild-loader#main",
-    "typescript-ts-loader": "forgojs/forgo-template-typescript#main",
-    "javascript-babel-loader": "forgojs/forgo-template-javascript#main",
+    typescript: "forgojs/forgo-template-typescript#main",
+    javascript: "forgojs/forgo-template-javascript#main",
+    "typescript-ts-loader": "forgojs/forgo-template-typescript-ts-loader#main",
+    "javascript-babel-loader": "forgojs/forgo-template-javascript-babel-loader#main",
   };
 
   async function run() {
