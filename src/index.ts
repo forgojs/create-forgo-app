@@ -50,7 +50,7 @@ if (!firstArg) {
           templates
         ).join(", ")}.`
       );
-      console.log("Type 'npx create-forgo-app' --help for help.");
+      console.log("Type 'npx create-forgo-app --help' for help.");
       process.exit(1);
     }
 

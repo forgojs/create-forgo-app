@@ -22,10 +22,28 @@ npm run build
 
 ## TypeScript
 
-create-forgo-app supports typescript too.
+TypeScript is supported too.
 
 ```sh
 npx create-forgo-app my-app --template typescript
+cd my-app
+npm start
+```
+
+## Other templates
+
+A JavaScript template using webpack with babel-loader:
+
+```sh
+npx create-forgo-app my-app --template javascript-babel-loader
+cd my-app
+npm start
+```
+
+A TypeScript template using webpack with ts-loader:
+
+```sh
+npx create-forgo-app my-app --template typescript-ts-loader
 cd my-app
 npm start
 ```
